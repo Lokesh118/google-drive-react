@@ -13,3 +13,11 @@ export const signUp = (user) => {
 export const login = (user) => {
   return authAxios.post('/auth/v2/login',user).then((response) => response.data)
 }
+
+export const resetRequest = (params) => {
+  return authAxios.post('/auth/v1/reset-request', {params: params}).then((response) => response)
+}
+
+export const resetPassword = (params) => {
+    return authAxios.post('/auth/v2/password-reset', {params: params}).then((response) => response)
+}
